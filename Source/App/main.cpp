@@ -1,7 +1,12 @@
-#include <iostream>
+#include "mainwindow.h"
+#include <QApplication>
 
-int main()
+int main(int argc, char** argv)
 {
-    std::cout << "Hello";
-    return 0;
+    QApplication app(argc, argv);
+
+    MainWindow mainWindow(400, 400);
+    mainWindow.show();
+
+    return QApplication::exec();
 }
