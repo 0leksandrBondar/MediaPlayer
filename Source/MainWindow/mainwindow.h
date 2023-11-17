@@ -2,7 +2,6 @@
 
 #include <QMainWindow>
 
-// forward declaration:
 class QWidget;
 
 class MainWindow : public QMainWindow
@@ -10,6 +9,6 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(const std::uint32_t  width, const std::uint32_t  height);
+    explicit MainWindow(const std::size_t  width, const std::size_t  height);
     ~MainWindow() = default;
 };

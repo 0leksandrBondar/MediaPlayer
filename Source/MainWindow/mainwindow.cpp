@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 
-MainWindow::MainWindow(const std::uint32_t width, const std::uint32_t height) : QMainWindow()
+MainWindow::MainWindow(const std::size_t width, const std::size_t height) : QMainWindow()
 {
-    setFixedSize(width, height);
+    resize(width, height);
 }
