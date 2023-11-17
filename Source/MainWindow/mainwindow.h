@@ -2,8 +2,6 @@
 
 #include <QMainWindow>
 
-class QWidget;
-
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
