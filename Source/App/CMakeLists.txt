@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -6,8 +6,6 @@ set(CMAKE_AUTORCC ON)
 
 set(SOURCE
     main.cpp)
-
-set(HEADERS )
 
 add_executable(${PROJECT_NAME} ${SOURCE} ${HEADERS})
 
