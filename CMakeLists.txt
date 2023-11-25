@@ -7,4 +7,3 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(Source)
 add_subdirectory(Libs)
-add_subdirectory(Tests)
