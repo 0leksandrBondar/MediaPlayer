@@ -1,8 +1,6 @@
 #pragma once
 
 #include <QMainWindow>
-#include <QtMultimedia>
-#include <QVideoWidget>
 
 class MainWindow : public QMainWindow
 {
