@@ -2,9 +2,6 @@
 
 #include <QMainWindow>
 #include <QtMultimedia>
-#include <QtCore>
-#include <QtWidgets>
-#include <QString>
 #include <QVideoWidget>
 
 class MainWindow : public QMainWindow
