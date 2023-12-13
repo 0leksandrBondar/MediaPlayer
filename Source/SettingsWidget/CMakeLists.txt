@@ -4,15 +4,12 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-set(LIBRARY MainWindow)
+set(LIBRARY SettingsWidget)
 
-add_library(${LIBRARY} mainwindow.cpp mainwindow.h)
+add_library(${LIBRARY} settingswidget.h settingswidget.cpp)
 
 target_link_libraries(${LIBRARY} PUBLIC
         Qt
-        SettingsWidget
-        PlayerWidget
-        ControlVideoWidget
 )
 
 target_include_directories(${LIBRARY} PUBLIC ./)
