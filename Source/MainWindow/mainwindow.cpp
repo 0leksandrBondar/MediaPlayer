@@ -1,23 +1,33 @@
 #include "mainwindow.h"
 
-#include <QtMultimedia>
-#include <QVideoWidget>
+#include <QVBoxLayout>
 
-MainWindow::MainWindow(const int width, const int height) : QMainWindow()
+MainWindow::MainWindow(const int width, const int height) :
+        QMainWindow(),
+        playerWidget(std::make_shared<PlayerWidget>(this)),
+        controlVideoWidget(std::make_shared<ControlVideoWidget>(this))
 {
     resize(width, height);
+
+    setupUI();
+    setupConnections();
 }
 
-void MainWindow::PlayVideo(const QString& path)
+void MainWindow::setupUI()
 {
-    QMediaPlayer* player = new QMediaPlayer();
-    QVideoWidget* video = new QVideoWidget();
+    setMinimumSize(400, 400);
+}
 
-    video->setGeometry(20, 20, 640, 480);
+void MainWindow::setupConnections()
+{
+    connect(controlVideoWidget.get(), &ControlVideoWidget::onPlayVideoButtonClicked, playerWidget.get(), &PlayerWidget::PlayVideo);
+    connect(controlVideoWidget.get(), &ControlVideoWidget::onStopVideoButtonClicked, playerWidget.get(),&PlayerWidget::PauseVideo);
+}
 
-    player->setVideoOutput(video);
-    player->setSource(QUrl::fromLocalFile(path));
+void MainWindow::resizeEvent(QResizeEvent* event)
+{
+    auto newSize = event->size();
 
-    video->show();
-    player->play();
+    playerWidget->resize(newSize);
+    controlVideoWidget->resize(newSize);
 }
